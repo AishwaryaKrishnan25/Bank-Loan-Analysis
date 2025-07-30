@@ -1,2 +1,115 @@
-# Bank-Loan-Analysis
-Tools Used - Python
+# 📌 Loan Approval Analysis
+
+A data analytics project that analyzes historical loan application data to uncover approval patterns, risk factors, and trends. This project uses Python libraries for data preprocessing, visualization, and rule-based loan approval analysis without machine learning.
+
+## 🚀 Features
+- Data cleaning and preprocessing (handling missing values & duplicates)
+- Exploratory Data Analysis (EDA) with visualization
+- Rule-based loan approval logic (credit score, income, DTI ratio)
+- Risk segmentation (low, medium, high)
+- Statistical reports and insights for financial institutions
+- No machine learning used – purely data-driven rules
+---
+
+## 🛠️ Tech Stack
+- **Programming Language:** Python 3.10+
+- **Libraries:**
+  - Pandas
+  - NumPy
+  - Matplotlib
+  - Seaborn
+- **Tools:** Jupyter Notebook
+- **Data Format:** CSV
+
+---
+
+## 📊 Key Insights
+- High credit score (670+) and stable income → higher approval rate.
+- Education loans have high rejection/default rates (~70% for poor credit).
+- Debt consolidation loans carry the highest interest rates.
+- Mortgage owners are lower-risk borrowers.
+- Previous defaults and short credit histories are strong risk indicators.
+
+---
+
+## 📷 Visualizations
+- Age & gender distribution
+- Education vs. loan amount
+- Income distribution
+- Loan approval status (histogram & pie chart)
+- Correlation heatmaps
+- Risk segmentation charts
+
+---
+
+## 🛠️ Example Code
+
+### 1️⃣ Data Preprocessing
+```python
+import pandas as pd
+
+# Load dataset
+data = pd.read_csv("data/loan_data.csv")
+
+# Check missing values and duplicates
+print(data.isna().sum())
+print(f"Duplicate rows: {data.duplicated().sum()}")
+
+# Handle missing values
+data.fillna(method="ffill", inplace=True)
+
+# Remove duplicates
+data.drop_duplicates(inplace=True)
+```
+
+### 2️⃣ Exploratory Data Analysis (EDA)
+```python
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Age distribution
+sns.histplot(data['person_age'], bins=30, kde=True)
+plt.title("Age Distribution of Loan Applicants")
+plt.show()
+
+# Correlation heatmap
+plt.figure(figsize=(10, 6))
+sns.heatmap(data.corr(), annot=True, cmap="coolwarm")
+plt.title("Correlation Heatmap")
+plt.show()
+```
+
+### 3️⃣ Rule-Based Loan Approval
+```python
+def loan_approval(row):
+    if row['credit_score'] > 700 and row['debt_to_income'] < 0.4:
+        return "Approved"
+    elif row['credit_score'] < 600 or row['debt_to_income'] > 0.6:
+        return "Rejected"
+    else:
+        return "Manual Review"
+
+data['loan_status'] = data.apply(loan_approval, axis=1)
+print(data['loan_status'].value_counts())
+```
+
+---
+
+## 📈 Future Enhancements
+- Real-time data integration
+- Advanced statistical scoring (logistic regression)
+- Automated rule adjustments based on economic trends
+- Interactive dashboards (Tableau/Power BI)
+
+---
+
+## 🧾 License
+This project is licensed under the MIT License.
+
+---
+
+## 📚 References
+- [Pandas Documentation](https://pandas.pydata.org/docs/)
+- [Matplotlib](https://matplotlib.org/)
+- [Seaborn](https://seaborn.pydata.org/)
+- [Kaggle Loan Approval Dataset](https://www.kaggle.com/datasets/architsharma01/loan-approval-prediction-dataset)
