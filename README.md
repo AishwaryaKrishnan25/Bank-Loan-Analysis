@@ -1,2 +1,2 @@
-# Bank-Loan-Analysis-
+# Bank-Loan-Analysis
 Tools Used - Python
