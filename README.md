@@ -9,7 +9,6 @@ A data analytics project that analyzes historical loan application data to uncov
 - Risk segmentation (low, medium, high)
 - Statistical reports and insights for financial institutions
 - No machine learning used – purely data-driven rules
----
 
 ## 🛠️ Tech Stack
 - **Programming Language:** Python 3.10+
@@ -21,16 +20,12 @@ A data analytics project that analyzes historical loan application data to uncov
 - **Tools:** Jupyter Notebook
 - **Data Format:** CSV
 
----
-
 ## 📊 Key Insights
 - High credit score (670+) and stable income → higher approval rate.
 - Education loans have high rejection/default rates (~70% for poor credit).
 - Debt consolidation loans carry the highest interest rates.
 - Mortgage owners are lower-risk borrowers.
 - Previous defaults and short credit histories are strong risk indicators.
-
----
 
 ## 📷 Visualizations
 - Age & gender distribution
@@ -39,8 +34,6 @@ A data analytics project that analyzes historical loan application data to uncov
 - Loan approval status (histogram & pie chart)
 - Correlation heatmaps
 - Risk segmentation charts
-
----
 
 ## 🛠️ Example Code
 
@@ -93,20 +86,16 @@ data['loan_status'] = data.apply(loan_approval, axis=1)
 print(data['loan_status'].value_counts())
 ```
 
----
-
 ## 📈 Future Enhancements
 - Real-time data integration
 - Advanced statistical scoring (logistic regression)
 - Automated rule adjustments based on economic trends
 - Interactive dashboards (Tableau/Power BI)
 
----
+<!-- --- -->
 
 ## 🧾 License
 This project is licensed under the MIT License.
-
----
 
 ## 📚 References
 - [Pandas Documentation](https://pandas.pydata.org/docs/)
