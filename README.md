@@ -1,4 +1,4 @@
-# 📌 Loan Approval Analysis
+# Loan Approval Analysis
 
 A data analytics project that analyzes historical loan application data to uncover approval patterns, risk factors, and trends. This project uses Python libraries for data preprocessing, visualization, and rule-based loan approval analysis without machine learning.
 
@@ -40,7 +40,7 @@ pip install -r requirements.txt
 ```
 3. Open Jupyter Notebook:
 ``` 
-jupyter notebook
+jupyter notebook and run code blocks
  ```
 
 
@@ -111,9 +111,6 @@ print(data['loan_status'].value_counts())
 - Interactive dashboards (Tableau/Power BI)
 
 <!-- --- -->
-
-## 🧾 License
-This project is licensed under the MIT License.
 
 ## 📚 References
 - [Pandas Documentation](https://pandas.pydata.org/docs/)
