@@ -27,13 +27,22 @@ A data analytics project that analyzes historical loan application data to uncov
 - Mortgage owners are lower-risk borrowers.
 - Previous defaults and short credit histories are strong risk indicators.
 
-## 📷 Visualizations
-- Age & gender distribution
-- Education vs. loan amount
-- Income distribution
-- Loan approval status (histogram & pie chart)
-- Correlation heatmaps
-- Risk segmentation charts
+## ⚙️ Installation
+1. Clone the repository:
+```
+git clone https://github.com/your-username/loan-approval-analysis.git
+cd loan-approval-analysis
+```
+
+2. Install dependencies:
+```
+pip install -r requirements.txt
+```
+3. Open Jupyter Notebook:
+``` 
+jupyter notebook
+ ```
+
 
 ## 🛠️ Example Code
 
@@ -56,19 +65,28 @@ data.drop_duplicates(inplace=True)
 ```
 
 ### 2️⃣ Exploratory Data Analysis (EDA)
-```python
-import seaborn as sns
+```Python
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 # Age distribution
-sns.histplot(data['person_age'], bins=30, kde=True)
-plt.title("Age Distribution of Loan Applicants")
+plt.figure(figsize=(8, 4))
+sns.histplot(data['person_age'], bins=20, kde=True)
+plt.title('Age Distribution')
 plt.show()
 
-# Correlation heatmap
+# Loan Approval Status
+plt.figure(figsize=(6, 4))
+data['loan_status'].value_counts().plot(kind='bar', color=['green', 'red'])
+plt.title('Loan Approval Status')
+plt.xlabel('Status')
+plt.ylabel('Count')
+plt.show()
+
+# Correlation Heatmap
 plt.figure(figsize=(10, 6))
-sns.heatmap(data.corr(), annot=True, cmap="coolwarm")
-plt.title("Correlation Heatmap")
+sns.heatmap(data.corr(), annot=True, cmap='coolwarm')
+plt.title('Correlation Heatmap')
 plt.show()
 ```
 
